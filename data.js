@@ -118,38 +118,38 @@ let Animal_Data = [
         image:'../images/SophieCat.jpg'
        }
 ];
-var i = getQueryParam('i');
+var index = getQueryParam('index');
 
-var name = Animal_Data[i].name;
+var name = Animal_Data[index].name;
 document.getElementById("name").innerHTML = name;
 
-var breed = Animal_Data[i].breed;
+var breed = Animal_Data[index].breed;
 document.getElementById("breed").innerHTML = breed;
 
-var sex = Animal_Data[i].sex;
+var sex = Animal_Data[index].sex;
 document.getElementById("sex").innerHTML = sex;
 
-var color = Animal_Data[i].color;
+var color = Animal_Data[index].color;
 document.getElementById("color").innerHTML = color;
 
-var spayed = Animal_Data[i].spayed;
+var spayed = Animal_Data[index].spayed;
 document.getElementById("spayed").innerHTML = spayed;
 
-var age = Animal_Data[i].age;
+var age = Animal_Data[index].age;
 document.getElementById("age").innerHTML = age;
 
-var animal_Id = Animal_Data[i].id;
+var animal_Id = Animal_Data[index].id;
 document.getElementById("animal_Id").innerHTML = animal_Id;
 
-var microchip = Animal_Data[i].microchip;
+var microchip = Animal_Data[index].microchip;
 document.getElementById("microchip").innerHTML = microchip;
 
-var about_Me = Animal_Data[i].about;
+var about_Me = Animal_Data[index].about;
 document.getElementById("about_Me").innerHTML = about_Me;
 
 function buildImage() {
     var img = document.createElement('img');
-    img.src = Animal_Data[i].image;
+    img.src = Animal_Data[index].image;
     document.getElementById('content').appendChild(img);
 }
 
