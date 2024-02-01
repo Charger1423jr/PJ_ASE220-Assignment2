@@ -83,8 +83,8 @@
 <script src="data.js"></script>
 <script> 
 let index=getQueryParam('index');
-			if(index===null) window.location.href='data.js.Animal_Data[i].name';
-			else document.getElementById('name').innerHTML= name;
+			if(index===null) window.location.href='data.js.Animal_Data[index].name';
+			else document.getElementById('name').innerHTML= index;
 		
 		function getQueryParam(key){
 			let queryParams=new URLSearchParams(window.location.search);
