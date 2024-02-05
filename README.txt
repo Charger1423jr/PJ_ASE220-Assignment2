@@ -6,5 +6,6 @@ Working on Index Page
 
 Name: Cleyton Shelton
 Work Completed:
-Updating Index Page
+Updated Index Page with Type of Animal
 Inserted Index code for Detail Page
+Updated JS Page
