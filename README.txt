@@ -8,3 +8,7 @@ Work Completed:
 Updated Index Page with Type of Animal
 Inserted Index code for Detail Page
 Updated JS Page
+
+
+Unfinished Work:
+Setting up Modals for each button on pet
