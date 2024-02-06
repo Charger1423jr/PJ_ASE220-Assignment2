@@ -1,8 +1,7 @@
 Name: Preston Jackson
 Work Completed:
-JS Arrays and objects
-Overall Code for Detail.html
-Working on Index Page
+Added New Pets to Array
+Expanded index page with show more button
 
 Name: Cleyton Shelton
 Work Completed:
