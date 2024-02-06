@@ -81,11 +81,10 @@
     </div>
 </article>
 <script src="data.js"></script>
-<script> 
-let index=getQueryParam('index');
-			if(index===null) window.location.href='data.js.Animal_Data[index].name';
-			else document.getElementById('name').innerHTML= index;
-		
+<script>
+
+            let index=getQueryParam('index');
+
 		function getQueryParam(key){
 			let queryParams=new URLSearchParams(window.location.search);
 			return queryParams.has(key) ? queryParams.get(key) : null;
