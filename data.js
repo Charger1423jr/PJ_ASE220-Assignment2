@@ -116,7 +116,7 @@ let Animal_Data = [
        microchip:'985112008765432',
        about:"Sophie is a young Ragdoll cat with a soft seal point coat and mesmerizing blue eyes. She was found as a kitten and raised in a foster home. Sophie is incredibly affectionate, often seeking out laps to curl up in. She's playful and enjoys interactive toys, but she's also content to relax and watch the world go by. Sophie gets along well with other pets and would be an excellent addition to a loving family or individual looking for a gentle and loving companion.",
         image:'../images/SophieCat.jpg'
-       }
+       },
        {
          name: 'Rocky',
          breed: 'German Shepherd',
@@ -128,7 +128,7 @@ let Animal_Data = [
          microchip: '789456123012345',
          about: 'Meet Rocky, a loyal and energetic German Shepherd. He is highly intelligent and loves to play fetch. Rocky enjoys long walks and would make a great jogging companion. He is protective of his family and loves children. Rocky is looking for an active household where he can thrive.',
          image: '../images/RockyGermanShepherd.jpg'
-       }
+       },
        {
          name: 'Milo',
          breed: 'Maine Coon',
@@ -140,7 +140,7 @@ let Animal_Data = [
          microchip: '456789012345678',
          about: 'Meet Milo, a majestic Maine Coon with striking orange fur. Milo is a gentle giant who loves lounging in the sun and receiving chin scratches. He gets along well with other cats and is friendly towards visitors. Milo is looking for a cozy home where he can be pampered and loved.',
          image: '../images/MiloMaineCoon.jpg'
-       }
+       },
        {
          name: 'Coco',
          breed: 'Labrador Retriever',
@@ -152,7 +152,7 @@ let Animal_Data = [
          microchip: '321098765432109',
          about: 'Meet Coco, a sweet and affectionate Labrador Retriever with a beautiful chocolate coat. Coco loves to swim and play fetch. She adores belly rubs and is great with children. Coco is looking for an active family who enjoys outdoor adventures.',
          image: '../images/CocoLabradorRetriever.jpg'
-       }
+       },
        {
          name: 'Simba',
          breed: 'Bengal',
@@ -164,7 +164,7 @@ let Animal_Data = [
          microchip: '654321098765432',
          about: 'Meet Simba, a playful and curious Bengal cat with striking spotted markings. Simba loves to explore and climb to high places. He enjoys interactive toys and puzzle games. Simba is looking for a home where he can receive plenty of attention and enrichment.',
          image: '../images/SimbaBengal.jpg'
-       }
+       },
        {
          name: 'Buddy',
          breed: 'Golden Retriever',
@@ -176,7 +176,7 @@ let Animal_Data = [
          microchip: '987654321098765',
          about: 'Meet Buddy, a friendly and gentle Golden Retriever with a heart of gold. Buddy loves to play fetch and swim in the lake. He is well-behaved and gets along with everyone, including other dogs and cats. Buddy is looking for a loving family to share his wagging tail and affectionate nature.',
          image: '../images/BuddyGoldenRetriever.jpg'
-       }
+       },
        {
          name: 'Whiskers',
          breed: 'Domestic Shorthair',
@@ -188,7 +188,7 @@ let Animal_Data = [
          microchip: '345678901234567',
          about: 'Meet Whiskers, a charming Domestic Shorthair with soft gray fur and white markings. Whiskers is independent but enjoys cuddle sessions on her terms. She likes chasing laser pointers and playing with feather toys. Whiskers is looking for a quiet home where she can be the center of attention.',
          image: '../images/WhiskersDomesticShorthair.jpg'
-       }
+       },
        {
          name: 'Shadow',
          breed: 'Border Collie',
@@ -200,7 +200,7 @@ let Animal_Data = [
          microchip: '567890123456789',
          about: 'Meet Shadow, a highly intelligent and agile Border Collie with a stunning black and white coat. Shadow excels in obedience training and loves learning new tricks. He enjoys playing frisbee and herding activities. Shadow is looking for an experienced owner who can provide mental stimulation and plenty of exercise.',
          image: '../images/ShadowBorderCollie.jpg'
-       }
+       },
        {
          name: 'Smokey',
          breed: 'Persian',
@@ -212,7 +212,7 @@ let Animal_Data = [
          microchip: '876543210987654',
          about: 'Meet Smokey, a regal Persian cat with luxurious blue fur. Smokey enjoys lounging on soft pillows and being brushed gently. He prefers a calm environment and would do best in a home without young children or other pets. Smokey is looking for a serene household where he can be the center of attention.',
          image: '../images/SmokeyPersian.jpg'
-       }
+       },
        {
          name: 'Oreo',
          breed: 'Dalmatian',
@@ -224,7 +224,7 @@ let Animal_Data = [
          microchip: '765432109876543',
          about: 'Meet Oreo, a playful and energetic Dalmatian with distinctive black spots. Oreo loves to run and play in the yard. She is good with children and enjoys going on long walks. Oreo is looking for an active family who can keep up with her boundless energy and love for adventure.',
          image: '../images/OreoDalmatian.jpg'
-       }
+       },
        {
          name: 'Felix',
          breed: 'Siamese',
@@ -236,7 +236,7 @@ let Animal_Data = [
          microchip: '654321987654321',
          about: 'Meet Felix, a handsome Siamese cat with striking blue eyes and a sleek seal point coat. Felix is affectionate and enjoys being in the company of his humans. He likes to chat and will often follow you around the house. Felix is looking for a loving home where he can receive plenty of attention and cuddles.',
          image: '../images/FelixSiamese.jpg'
-       }
+       },
        {
          name: 'Buster',
          breed: 'Boxer',
@@ -248,7 +248,7 @@ let Animal_Data = [
          microchip: '789012345678901',
          about: 'Meet Buster, a playful and affectionate Boxer with a fawn-colored coat. Buster loves to play with toys and chase after balls. He is great with children and enjoys cuddling on the couch. Buster is looking for an active family who can provide him with lots of love and attention.',
          image: '../images/BusterBoxer.jpg'
-       }
+       },
        {
          name: 'Snowball',
          breed: 'Ragdoll',
@@ -260,7 +260,7 @@ let Animal_Data = [
          microchip: '890123456789012',
          about: 'Meet Snowball, a beautiful Ragdoll cat with soft white fur and striking blue eyes. Snowball is gentle and affectionate, enjoying cuddle sessions and chin scratches. She gets along well with other cats and is friendly towards visitors. Snowball is looking for a loving home where she can be pampered and cherished.',
          image: '../images/SnowballRagdoll.jpg'
-       }
+       },
        {
          name: 'Rex',
          breed: 'Siberian Husky',
@@ -272,7 +272,7 @@ let Animal_Data = [
          microchip: '890123456789012',
          about: 'Meet Rex, a playful and energetic Siberian Husky with striking blue eyes and a fluffy gray and white coat. Rex loves to run and play in the snow. He is friendly towards everyone and enjoys meeting new people and dogs. Rex is looking for an active family who enjoys outdoor activities and can provide him with plenty of exercise and mental stimulation.',
          image: '../images/RexSiberianHusky.jpg'
-       }
+       },
        {
          name: 'Lucky',
          breed: 'Cavalier King Charles Spaniel',
@@ -284,7 +284,7 @@ let Animal_Data = [
          microchip: '098765432109876',
          about: 'Meet Lucky, a charming Cavalier King Charles Spaniel with a beautiful Blenheim coat. Lucky is sweet-natured and loves to cuddle on your lap. He is good with children and other pets, making him a wonderful companion. Lucky is looking for a loving home where he can be showered with affection.',
          image: '../images/LuckyCavalierKingCharlesSpaniel.jpg'
-       }
+       },
        {
          name: 'Misty',
          breed: 'Persian',
@@ -296,7 +296,7 @@ let Animal_Data = [
          microchip: '890123456789098',
          about: 'Meet Misty, a beautiful Persian cat with a luxurious white coat. Misty is elegant and enjoys lounging in sunny spots around the house. She prefers a quiet environment and would do best in a home without young children or other pets. Misty is looking for a calm household where she can be cherished and adored.',
          image: '../images/MistyPersian.jpg'
-       }
+       },
        {
          name: 'Sam',
          breed: 'Australian Shepherd',
@@ -308,7 +308,7 @@ let Animal_Data = [
          microchip: '456789012345678',
          about: 'Meet Sam, a playful and intelligent Australian Shepherd with a stunning red merle coat. Sam is full of energy and loves to play fetch and frisbee. He is highly trainable and enjoys learning new tricks. Sam is looking for an active family who can provide him with plenty of exercise and mental stimulation.',
          image: '../images/SamAustralianShepherd.jpg'
-       }
+       },
        {
          name: 'Angel',
          breed: 'Chihuahua',
@@ -320,7 +320,7 @@ let Animal_Data = [
          microchip: '678901234567890',
          about: 'Meet Angel, a tiny and adorable Chihuahua with a fawn-colored coat. Despite her small size, Angel has a big personality. She loves cuddling in blankets and going for leisurely walks. Angel is looking for a loving home where she can be the center of attention.',
          image: '../images/AngelChihuahua.jpg'
-       }
+       },
        {
          name: 'Molly',
          breed: 'Labrador Retriever',
@@ -332,7 +332,7 @@ let Animal_Data = [
          microchip: '123456789012345',
          about: 'Meet Molly, a gentle and loyal Labrador Retriever with a sunny disposition. Molly enjoys playing fetch and going for long walks. She is good with children and other pets, making her an ideal family companion. Molly is looking for a loving home where she can be part of a loving family.',
          image: '../images/MollyLabradorRetriever.jpg'
-       }
+       },
        {
          name: 'Tiger',
          breed: 'Tabby',
@@ -344,7 +344,7 @@ let Animal_Data = [
          microchip: '234567890123456',
          about: 'Meet Tiger, a handsome and playful Tabby cat with vibrant orange fur. Tiger loves to chase after toys and nap in sunny spots. He is good with children and enjoys being around people. Tiger is looking for a forever home where he can be cherished and loved.',
          image: '../images/TigerTabby.jpg'
-       }
+       },
        {
          name: 'Cleo',
          breed: 'Ragdoll',
