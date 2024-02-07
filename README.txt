@@ -6,8 +6,7 @@ Set up Modals for each button on pet
 
 Name: Cleyton Shelton
 Work Completed:
-Updated Index Page with Type of Animal
-Inserted Index code for Detail Page
-Updated JS Page
 
 
+Work to Be Complete:
+  Modals Forwarding to detail.html
