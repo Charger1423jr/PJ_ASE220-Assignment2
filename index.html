@@ -6,34 +6,34 @@
     <title>Cincinnati Animal Shelter - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
- body {
- background-color: #EEEEEE;
- }
- article {
- padding: 10px;
- }
-        img {
-        width: 100%;
+        body {
+        background-color: #EEEEEE;
         }
-        .left {
-        float: left;
+        article {
         padding: 10px;
         }
-        .right {
-        float: right;
-		padding: 10px;
-        }
-        footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #EEEEEE;
-  border-top: 5px solid #004488;
-  color: white;
-  text-align: center;
-  padding: 3px;
-}
+               img {
+               width: 100%;
+               }
+               .left {
+               float: left;
+               padding: 10px;
+               }
+               .right {
+               float: right;
+               padding: 10px;
+               }
+               footer {
+         position: fixed;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: #EEEEEE;
+         border-top: 5px solid #004488;
+         color: white;
+         text-align: center;
+         padding: 3px;
+       }
     </style>
 </head>
 <body onload="buildImage();">
@@ -105,10 +105,95 @@
                 var age = document.createElement("p");
                 age.textContent = animal.age;
 
-                var seeMore = document.createElement("a");
-                seeMore.href = "detail.html?index="+i;
-                seeMore.className = "btn btn-primary";
+
+                var seeMore = document.createElement("button");
+                seeMore.setAttribute("type", "button");
+                seeMore.classList.add("btn", "btn-primary");
                 seeMore.textContent = "See More";
+
+
+                seeMore.addEventListener("click", function() {
+                    showModal();
+                });
+
+
+                document.body.appendChild(seeMore);
+
+
+                function showModal() {
+
+                    var modalOverlay = document.createElement("div");
+                    modalOverlay.classList.add("modal-overlay");
+
+
+                    var modalContainer = document.createElement("div");
+                    modalContainer.classList.add("modal-container");
+
+
+                    var modalHeader = document.createElement("div");
+                    modalHeader.classList.add("modal-header");
+                    var modalTitle = document.createElement("h2");
+                    modalTitle.textContent = animal.name;
+                    var closeButton = document.createElement("button");
+                    closeButton.classList.add("close-button");
+                    closeButton.textContent = "X";
+                    closeButton.addEventListener("click", function() {
+                       closeModal();
+                    });
+                    modalHeader.appendChild(modalTitle);
+                    modalHeader.appendChild(closeButton);
+
+
+                  var modalBody = document.createElement("div");
+                  modalBody.classList.add("modal-body");
+                  var paragraph1 = document.createElement("p");
+                  paragraph1.textContent = "Breed: " + animal.breed;
+                  var paragraph2 = document.createElement("p");
+                  paragraph2.textContent = "Sex: " + animal.sex;
+                  var paragraph3 = document.createElement("p");
+                  paragraph3.textContent = "Age: " + animal.age;
+                  modalBody.appendChild(paragraph1);
+                  modalBody.appendChild(paragraph2);
+                  modalBody.appendChild(paragraph3);
+
+
+                  var modalFooter = document.createElement("div");
+                  modalFooter.classList.add("modal-footer");
+                  var closeButtonModal = document.createElement("button");
+                  closeButtonModal.setAttribute("type", "button");
+                  closeButtonModal.classList.add("btn", "btn-secondary");
+                  closeButtonModal.textContent = "Close";
+                  closeButtonModal.addEventListener("click", function() {
+                    closeModal();
+                  });
+                  var saveButton = document.createElement("button");
+                  saveButton.setAttribute("type", "button");
+                  saveButton.classList.add("btn", "btn-primary");
+                  saveButton.textContent = "All About Me";
+
+
+                  modalFooter.appendChild(closeButtonModal);
+                  modalFooter.appendChild(saveButton);
+
+
+                  modalContainer.appendChild(modalHeader);
+                  modalContainer.appendChild(modalBody);
+                  modalContainer.appendChild(modalFooter);
+
+
+                  modalOverlay.appendChild(modalContainer);
+
+
+                  document.body.appendChild(modalOverlay);
+                }
+
+
+                function closeModal() {
+                  var modalOverlay = document.querySelector(".modal-overlay");
+                  modalOverlay.remove();
+}
+
+
 
                 cardBody.appendChild(title);
                 cardBody.appendChild(breedHeader);
@@ -131,68 +216,158 @@
                onclick="loadMorePets()">
 
         <script>
-        function loadMorePets() {
-            document.querySelector(".button").
-            onclick = function () {
-                for (var i = 09; i < 29; i++) {
-                var animal = Animal_Data[i];
+            function loadMorePets() {
+                document.querySelector(".button").
+                onclick = function () {
+                    for (var i = 09; i < 29; i++) {
+                    var animal = Animal_Data[i];
 
-                var cardDiv = document.createElement("div");
-                cardDiv.className = "left card mb-3";
-                cardDiv.style = "width: 18rem;";
+                    var cardDiv = document.createElement("div");
+                    cardDiv.className = "left card mb-3";
+                    cardDiv.style = "width: 18rem;";
 
-                var imgDiv = document.createElement("div");
-                imgDiv.className = "col";
-                var img = document.createElement("img");
-                img.src = animal.image;
-                imgDiv.appendChild(img);
+                    var imgDiv = document.createElement("div");
+                    imgDiv.className = "col";
+                    var img = document.createElement("img");
+                    img.src = animal.image;
+                    imgDiv.appendChild(img);
 
-                var cardBody = document.createElement("div");
-                cardBody.className = "card-body";
+                    var cardBody = document.createElement("div");
+                    cardBody.className = "card-body";
 
-                var title = document.createElement("h4");
-                title.className = "card-title";
-                title.textContent = animal.name;
+                    var title = document.createElement("h4");
+                    title.className = "card-title";
+                    title.textContent = animal.name;
 
-                var breedHeader = document.createElement("h6");
-                breedHeader.textContent = "Breed:";
-                var breed = document.createElement("p");
-                breed.textContent = animal.breed;
+                    var breedHeader = document.createElement("h6");
+                    breedHeader.textContent = "Breed:";
+                    var breed = document.createElement("p");
+                    breed.textContent = animal.breed;
 
-                var sexHeader = document.createElement("h6");
-                sexHeader.textContent = "Sex:";
-                var sex = document.createElement("p");
-                sex.textContent = animal.sex;
+                    var sexHeader = document.createElement("h6");
+                    sexHeader.textContent = "Sex:";
+                    var sex = document.createElement("p");
+                    sex.textContent = animal.sex;
 
-                var ageHeader = document.createElement("h6");
-                ageHeader.textContent = "Age:";
-                var age = document.createElement("p");
-                age.textContent = animal.age;
+                    var ageHeader = document.createElement("h6");
+                    ageHeader.textContent = "Age:";
+                    var age = document.createElement("p");
+                    age.textContent = animal.age;
 
-                var seeMore = document.createElement("a");
-                seeMore.href = "detail.html?index="+i;
-                seeMore.className = "btn btn-primary";
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
+                var seeMore = document.createElement("button");
+                seeMore.setAttribute("type", "button");
+                seeMore.classList.add("btn", "btn-primary");
                 seeMore.textContent = "See More";
 
-                cardBody.appendChild(title);
-                cardBody.appendChild(breedHeader);
-                cardBody.appendChild(breed);
-                cardBody.appendChild(sexHeader);
-                cardBody.appendChild(sex);
-                cardBody.appendChild(ageHeader);
-                cardBody.appendChild(age);
-                cardBody.appendChild(seeMore);
 
-                cardDiv.appendChild(imgDiv);
-                cardDiv.appendChild(cardBody);
-                cardContainer.appendChild(cardDiv);
+                seeMore.addEventListener("click", function() {
+                    showModal();
+                });
+
+
+                document.body.appendChild(seeMore);
+
+
+                function showModal() {
+
+                    var modalOverlay = document.createElement("div");
+                    modalOverlay.classList.add("modal-overlay");
+
+
+                    var modalContainer = document.createElement("div");
+                    modalContainer.classList.add("modal-container");
+
+
+                    var modalHeader = document.createElement("div");
+                    modalHeader.classList.add("modal-header");
+                    var modalTitle = document.createElement("h2");
+                    modalTitle.textContent = "Modal Title";
+                    var closeButton = document.createElement("button");
+                    closeButton.classList.add("close-button");
+                    closeButton.textContent = "X";
+                    closeButton.addEventListener("click", function() {
+                       closeModal();
+                    });
+                    modalHeader.appendChild(modalTitle);
+                    modalHeader.appendChild(closeButton);
+
+
+                  var modalBody = document.createElement("div");
+                  modalBody.classList.add("modal-body");
+                  var paragraph1 = document.createElement("p");
+                  paragraph1.textContent = "Paragraph 1";
+                  var paragraph2 = document.createElement("p");
+                  paragraph2.textContent = "Paragraph 2";
+                  var paragraph3 = document.createElement("p");
+                  paragraph3.textContent = "Paragraph 3";
+                  modalBody.appendChild(paragraph1);
+                  modalBody.appendChild(paragraph2);
+                  modalBody.appendChild(paragraph3);
+
+
+                  var modalFooter = document.createElement("div");
+                  modalFooter.classList.add("modal-footer");
+                  var closeButtonModal = document.createElement("button");
+                  closeButtonModal.setAttribute("type", "button");
+                  closeButtonModal.classList.add("btn", "btn-secondary");
+                  closeButtonModal.textContent = "Close";
+                  closeButtonModal.addEventListener("click", function() {
+                    closeModal();
+                  });
+                  var saveButton = document.createElement("button");
+                  saveButton.setAttribute("type", "button");
+                  saveButton.classList.add("btn", "btn-primary");
+                  saveButton.textContent = "Save";
+                  modalFooter.appendChild(closeButtonModal);
+                  modalFooter.appendChild(saveButton);
+
+
+                  modalContainer.appendChild(modalHeader);
+                  modalContainer.appendChild(modalBody);
+                  modalContainer.appendChild(modalFooter);
+
+
+                  modalOverlay.appendChild(modalContainer);
+
+
+                  document.body.appendChild(modalOverlay);
+                }
+
+
+                function closeModal() {
+                  var modalOverlay = document.querySelector(".modal-overlay");
+                  modalOverlay.remove();
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+                    cardBody.appendChild(title);
+                    cardBody.appendChild(breedHeader);
+                    cardBody.appendChild(breed);
+                    cardBody.appendChild(sexHeader);
+                    cardBody.appendChild(sex);
+                    cardBody.appendChild(ageHeader);
+                    cardBody.appendChild(age);
+                    cardBody.appendChild(seeMore);
+
+                    cardDiv.appendChild(imgDiv);
+                    cardDiv.appendChild(cardBody);
+                    cardContainer.appendChild(cardDiv);
+                }
+
+            };
             }
-            
-        };
-        }
-    </script>
+        </script>
     </footer>
 </article>
 </body>
 </html>
-
