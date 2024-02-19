@@ -60,6 +60,100 @@
     </div>
 </nav>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Animal</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Animal</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <textarea name="name" class="form-control" placeholder="Animal Name"></textarea>
+                <textarea name="breed" class="form-control" placeholder="Animal Breed"></textarea>
+                <textarea name="sex" class="form-control" placeholder="Animal Sex"></textarea>
+                <textarea name="age" class="form-control" placeholder="Animal Age"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn save btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    $(document).on('click', '.save', function() {
+        var cardContainer = document.getElementById("cardContainer");
+
+        var name = document.querySelector('textarea[name="name"]').value;
+        var breed = document.querySelector('textarea[name="breed"]').value;
+        var sex = document.querySelector('textarea[name="sex"]').value;
+        var age = document.querySelector('textarea[name="age"]').value;
+
+
+        var cardDiv = document.createElement("div");
+        cardDiv.className = "left card mb-3";
+        cardDiv.style = "width: 18rem;";
+
+        var cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        var title = document.createElement("h4");
+        title.className = "card-title";
+        title.textContent = name; // Use the retrieved name
+
+        var breedHeader = document.createElement("h6");
+        breedHeader.textContent = "Breed:";
+        var breedParagraph = document.createElement("p");
+        breedParagraph.textContent = breed; // Use the retrieved breed
+
+        var sexHeader = document.createElement("h6");
+        sexHeader.textContent = "Sex:";
+        var sexParagraph = document.createElement("p");
+        sexParagraph.textContent = sex; // Use the retrieved sex
+
+        var ageHeader = document.createElement("h6");
+        ageHeader.textContent = "Age:";
+        var ageParagraph = document.createElement("p");
+        ageParagraph.textContent = age;
+
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "btn btn-danger delete";
+        deleteButton.addEventListener("click", function() {
+            // Remove the card when delete button is clicked
+            cardContainer.removeChild(cardDiv);
+        });
+
+        var editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.className = "btn btn-primary edit";
+            editButton.addEventListener("click", function() {
+               
+            });
+
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(breedHeader);
+        cardBody.appendChild(breedParagraph);
+        cardBody.appendChild(sexHeader);
+        cardBody.appendChild(sexParagraph);
+        cardBody.appendChild(ageHeader);
+        cardBody.appendChild(ageParagraph);
+        cardBody.appendChild(deleteButton);
+        cardBody.appendChild(editButton);
+        cardDiv.appendChild(cardBody);
+
+        cardContainer.appendChild(cardDiv);
+    });
+</script>
+
+
 <article>
     <h2 style="text-align: center; border-bottom: 5px solid #004488"><i>About Me</i></h2>
 
@@ -105,14 +199,20 @@
                 var age = document.createElement("p");
                 age.textContent = animal.age;
 
+                var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "btn btn-danger delete";
+        deleteButton.addEventListener("click", function() {
+            container.removeChild(cardDiv);
+        });
 
                 var seeMore = document.createElement("button");
                 seeMore.setAttribute("type", "button");
                 seeMore.classList.add("btn", "btn-primary");
                 seeMore.textContent = "See More";
 
-
                 seeMore.addEventListener("click", function() {
+
                     showModal();
                 });
 
@@ -179,10 +279,7 @@
                   modalContainer.appendChild(modalHeader);
                   modalContainer.appendChild(modalBody);
                   modalContainer.appendChild(modalFooter);
-
-
                   modalOverlay.appendChild(modalContainer);
-
 
                   document.body.appendChild(modalOverlay);
                 }
@@ -192,7 +289,6 @@
                   var modalOverlay = document.querySelector(".modal-overlay");
                   modalOverlay.remove();
 }
-
 
 
                 cardBody.appendChild(title);
