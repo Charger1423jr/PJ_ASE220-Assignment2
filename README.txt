@@ -1,12 +1,12 @@
 Name: Preston Jackson
 Work Completed:
-Added "Create" Feature
-Added "Delete" Feature
-Added Edit Button
+
 
 Name: Cleyton Shelton
 Work Completed:
 
 
 Work to Be Complete:
-  Get Edit button working
+  Make a GET request to JSONblob and retrieve the entire document
+  PUT Request to JSONblob when animal added
+  PUT Request to delete animal when deleted
