@@ -35,6 +35,72 @@
          padding: 3px;
        }
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        // Function to make a GET request to JSONblob
+function fetchData() {
+    fetch('https://jsonblob.com/api/jsonBlob/<your_blob_id>')
+    .then(response => response.json())
+    .then(data => {
+        // Assuming your data is stored in an array called 'pets'
+        displayPets(data.pets);
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
+// Function to display pets with pagination
+function displayPets(pets) {
+    // Assuming 'petsPerPage' is the number of pets to display per page
+    // Assuming 'currentPage' is the current page number
+    const startIndex = (currentPage - 1) * petsPerPage;
+    const endIndex = startIndex + petsPerPage;
+    const currentPets = pets.slice(startIndex, endIndex);
+
+    // Display currentPets on the page
+}
+
+// Function to add a new pet
+function addPet(newPet) {
+    // Assuming 'pets' is the array containing existing pets
+    pets.push(newPet);
+    displayPets(pets);
+
+    fetch('https://jsonblob.com/api/jsonBlob/1211752921292464128', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pets: pets }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to update data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Data updated successfully:', data);
+    })
+    .catch(error => console.error('Error updating data:', error));
+}
+
+$(document).on('click', '.save', function() {
+    var name = document.querySelector('textarea[name="name"]').value;
+    var breed = document.querySelector('textarea[name="breed"]').value;
+    var sex = document.querySelector('textarea[name="sex"]').value;
+    var age = document.querySelector('textarea[name="age"]').value;
+
+    var newPet = {
+        name: name,
+        breed: breed,
+        sex: sex,
+        age: age
+    };
+
+    addPet(newPet);
+});
+    </script>
 </head>
 <body onload="buildImage();">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -105,17 +171,17 @@
 
         var title = document.createElement("h4");
         title.className = "card-title";
-        title.textContent = name; // Use the retrieved name
+        title.textContent = name;
 
         var breedHeader = document.createElement("h6");
         breedHeader.textContent = "Breed:";
         var breedParagraph = document.createElement("p");
-        breedParagraph.textContent = breed; // Use the retrieved breed
+        breedParagraph.textContent = breed;
 
         var sexHeader = document.createElement("h6");
         sexHeader.textContent = "Sex:";
         var sexParagraph = document.createElement("p");
-        sexParagraph.textContent = sex; // Use the retrieved sex
+        sexParagraph.textContent = sex;
 
         var ageHeader = document.createElement("h6");
         ageHeader.textContent = "Age:";
@@ -123,18 +189,67 @@
         ageParagraph.textContent = age;
 
         var deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.className = "btn btn-danger delete";
-        deleteButton.addEventListener("click", function() {
-            // Remove the card when delete button is clicked
-            cardContainer.removeChild(cardDiv);
-        });
+deleteButton.textContent = "Delete";
+deleteButton.className = "btn btn-danger delete";
+deleteButton.addEventListener("click", function() {
+    var cardNode = this.parentNode.parentNode; // Get the parent node of the delete button
+    deletePet(cardNode); // Call the function to handle pet deletion
+});
+
+function deletePet(cardNode) {
+
+    cardNode.parentNode.removeChild(cardNode);
+
+    fetch('https://jsonblob.com/api/your-document-id', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(yourUpdatedDataStructure),
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Pet deleted successfully.');
+        } else {
+            console.error('Failed to delete pet.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 
         var editButton = document.createElement("button");
             editButton.textContent = "Edit";
             editButton.className = "btn btn-primary edit";
             editButton.addEventListener("click", function() {
-               
+               var editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.className = "btn btn-primary edit";
+            editButton.addEventListener("click", function() {
+
+    editPetInformation(this.parentNode);
+});
+
+function editPetInformation(cardNode) {
+    var name = cardNode.querySelector('.card-title').textContent;
+    var breed = cardNode.querySelector('p:nth-of-type(1)').textContent;
+    var sex = cardNode.querySelector('p:nth-of-type(2)').textContent;
+    var age = cardNode.querySelector('p:nth-of-type(3)').textContent;
+
+
+    var newName = prompt("Enter the new name", name);
+    var newBreed = prompt("Enter the new breed", breed);
+    var newSex = prompt("Enter the new sex", sex);
+    var newAge = prompt("Enter the new age", age);
+
+    cardNode.querySelector('.card-title').textContent = newName;
+    cardNode.querySelector('p:nth-of-type(1)').textContent = newBreed;
+    cardNode.querySelector('p:nth-of-type(2)').textContent = newSex;
+    cardNode.querySelector('p:nth-of-type(3)').textContent = newAge;
+}
+
             });
 
 
@@ -351,10 +466,6 @@
                     age.textContent = animal.age;
 
 
-
-//----------------------------------------------------------------------------------------------------------------------
-
-
                 var seeMore = document.createElement("button");
                 seeMore.setAttribute("type", "button");
                 seeMore.classList.add("btn", "btn-primary");
@@ -439,12 +550,6 @@
                   var modalOverlay = document.querySelector(".modal-overlay");
                   modalOverlay.remove();
 }
-
-
-//----------------------------------------------------------------------------------------------------------------------
-
-
-
 
                     cardBody.appendChild(title);
                     cardBody.appendChild(breedHeader);
